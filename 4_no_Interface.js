@@ -1,47 +1,59 @@
 // not Interface segregation principle
- class Animal {
-     constructor(name) {
-         this.name = name
-     }
-     walk(){
-         console.log(`${this.name} can walks`)
-     }
-     swim(){
-         console.log(`${this.name} can swims`)
-     }
-     fly(){
-         console.log(`${this.name} can flies`)
-     }
- }
- class Dog extends Animal{
-    fly() {
-        return null
+
+class AutoSet {
+    getTeslaSet(){
+        console.log('name: Tesla fuel: electricity')
+    };
+    getBMWSet(){
+        console.log('name: BMW fuel: petrol')
+    };
+    getAudiSet(){
+        console.log('name: Audi fuel: diesel')
+    };
+}
+
+class Audi extends AutoSet {
+    getTeslaSet() {
+        console.log('')
     }
- }
-class Woodpecker extends Animal{
-    swim() {
-        return null
+    getBMWSet() {
+        console.log('')
     }
 }
-class Whale extends Animal{
-    walk() {
-        return null
+
+const AudiA4 = new Audi()
+AudiA4.getAudiSet()
+AudiA4.getBMWSet()
+AudiA4.getTeslaSet()
+
+//===========================================
+
+class Tesla extends AutoSet {
+    getAudiSet() {
+        console.log('')
     }
-    fly() {
-        return null
+    getBMWSet() {
+        console.log('')
     }
 }
-const dog = new Dog('Pluto')
-dog.swim()
-dog.walk()
-dog.fly()
 
-const woodrecker = new Woodpecker('woody')
-woodrecker.swim()
-woodrecker.walk()
-woodrecker.fly()
+const TeslaModelS = new Tesla()
+TeslaModelS.getAudiSet()
+TeslaModelS.getBMWSet()
+TeslaModelS.getTeslaSet()
 
-const whale = new Whale('willy')
-whale.swim()
-whale.walk()
-whale.fly()
+//===========================================
+
+class BMW extends AutoSet {
+    getAudiSet() {
+        console.log('')
+    }
+    getTeslaSet() {
+        console.log('')
+    }
+}
+
+const BMW_M3 = new BMW()
+BMW_M3.getAudiSet()
+BMW_M3.getBMWSet()
+BMW_M3.getTeslaSet()

@@ -15,6 +15,7 @@ class LocalStorage {
     }
 }
 
+//abstraction
 class FetchClient {
     constructor(props) {
         this.fetch = new Fetch()
@@ -24,6 +25,7 @@ class FetchClient {
     }
 }
 
+//abstraction
 class LocalStorageClient {
     constructor() {
         this.localStorage = new LocalStorage()

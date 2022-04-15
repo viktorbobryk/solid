@@ -1,4 +1,4 @@
-//Liskov substitution principle
+// not Liskov substitution principle
 class Person {
     access() {
         console.log('access allowed')
@@ -13,7 +13,7 @@ class Backend  extends Person{
 }
 class Competitor extends Person{
     access() {
-        throw  new Error('access denied')
+        console.log('access not allowed')
     }
 }
 

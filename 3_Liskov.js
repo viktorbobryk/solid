@@ -22,8 +22,10 @@ class Backend  extends Staff{
     canCreateDB(){}
 }
 class Competitor extends Guest{
+    canStealOurCompanySecrets(){}
+
     access() {
-        throw  new Error('access denied')
+        console.log('access not allowed')
     }
 }
 

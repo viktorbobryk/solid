@@ -1,4 +1,4 @@
-//Dependency inversion principle
+//not Dependency inversion principle
 
 class Fetch {
     request(url) {
